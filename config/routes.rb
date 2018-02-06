@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'users/create'
 
-  get 'users/edit'
+  get 'users/edit', as: 'edit'
 
   get 'users/destroy'
 

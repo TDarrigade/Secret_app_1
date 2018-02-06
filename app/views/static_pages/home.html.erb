@@ -5,7 +5,11 @@
     Bienvenue sur la page du secret de l'univers !
     
   </h2>
+<% if logged_in? %>
+<%= link_to "Decouvrir le secret", secret_path  , class: "btn btn-lg btn-primary" %>
 
+<% else %>
   <%= link_to "Decouvrir le secret", 'login', class: "btn btn-lg btn-primary" %>
+<%end%>
 </div>
 

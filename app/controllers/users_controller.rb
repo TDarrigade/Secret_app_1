@@ -6,17 +6,19 @@ class UsersController < ApplicationController
   def create
   	  @user = User.new(user_params)
     if @user.save
+    	log_in @user
+    	flash[:success] = "Bienvenue dans l'univers infini !"
       redirect_to @user
     else
       render 'new'
     end
   end
 
- # def show
- # 	redirect_to @static_pages
- #end
+def show
+end
 
   def edit
+  	@user = User.find(params[:id])
   end
 
   def destroy
